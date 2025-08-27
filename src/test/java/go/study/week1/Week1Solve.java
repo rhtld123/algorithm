@@ -10,7 +10,7 @@ class Week1Solve {
 
 
   @ParameterizedTest
-  @CsvSource(value = {"():true", "()[]{}:true", "(]:false", "([]):true", "([)]:false"}, delimiter = ':')
+  @CsvSource(value = {"():true", "()[]{}:true", "(]:false", "([]):true", "([)]:false", "([}}]):false"}, delimiter = ':')
   void valid_parentheses(String s, boolean expect) {
     assertEquals(ValidParentheses.isValid(s), expect);
   }
