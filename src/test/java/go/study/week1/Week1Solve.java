@@ -29,4 +29,12 @@ class Week1Solve {
     assertEquals(ContainsDuplicate.containsDuplicate(new int[]{1, 2, 3, 4}), false);
     assertEquals(ContainsDuplicate.containsDuplicate(new int[]{1,1,1,3,3,4,3,2,4,2}), true);
   }
+
+  @Test
+  void anagram() {
+    assertEquals(Anagram.isAnagram("anagram","nagaram"), true);
+    assertEquals(Anagram.isAnagram("rat","car"), false);
+    assertEquals(Anagram.isAnagram("a","ab"), false);
+    assertEquals(Anagram.isAnagram("ab","a"), false);
+  }
 }
