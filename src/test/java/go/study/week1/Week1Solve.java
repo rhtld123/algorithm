@@ -3,9 +3,9 @@ package go.study.week1;
 import static go.study.week1.TwoSum.twoSum;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.List;
-import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -27,14 +27,22 @@ class Week1Solve {
   void contains_duplicate() {
     assertEquals(ContainsDuplicate.containsDuplicate(new int[]{1, 2, 3, 1}), true);
     assertEquals(ContainsDuplicate.containsDuplicate(new int[]{1, 2, 3, 4}), false);
-    assertEquals(ContainsDuplicate.containsDuplicate(new int[]{1,1,1,3,3,4,3,2,4,2}), true);
+    assertEquals(ContainsDuplicate.containsDuplicate(new int[]{1, 1, 1, 3, 3, 4, 3, 2, 4, 2}), true);
   }
 
   @Test
   void anagram() {
-    assertEquals(Anagram.isAnagram("anagram","nagaram"), true);
-    assertEquals(Anagram.isAnagram("rat","car"), false);
-    assertEquals(Anagram.isAnagram("a","ab"), false);
-    assertEquals(Anagram.isAnagram("ab","a"), false);
+    assertEquals(Anagram.isAnagram("anagram", "nagaram"), true);
+    assertEquals(Anagram.isAnagram("rat", "car"), false);
+    assertEquals(Anagram.isAnagram("a", "ab"), false);
+    assertEquals(Anagram.isAnagram("ab", "a"), false);
+  }
+
+  @Test
+  void valid_palindrome() {
+    assertTrue(ValidPalindrome.isPalindrome("A man, a plan, a canal: Panama"));
+    assertFalse(ValidPalindrome.isPalindrome("race a car"));
+    assertTrue(ValidPalindrome.isPalindrome(" "));
+    assertTrue(ValidPalindrome.isPalindrome("a."));
   }
 }
